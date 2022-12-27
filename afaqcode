@@ -92,7 +92,7 @@ adj[n:,n:] = nx.to_numpy_array(S2)'''
 for i in range(5):
     stoch_density = []
     t=0
-    mm=erdos_erdos(100, 0.99)
+    mm=albert_albert(101, 0.5)
     while t<T:
         stoch_density.append(density_return(mm)[0])
         mfa_density.append(p)
@@ -102,7 +102,7 @@ for i in range(5):
     plt.plot([x for x in range(T)],stoch_density, 'k')
 
 
-for i in range(5):
+'''for i in range(5):
     stoch_density = []
     t=0
     mm=erdos_erdos(100, 0.5)
@@ -112,7 +112,7 @@ for i in range(5):
         mm = new_adj(mm)
         p = new_p(p)
         t += 1
-    plt.plot([x for x in range(T)],stoch_density, 'k')
+    plt.plot([x for x in range(T)],stoch_density, 'k')'''
 
 #plt.plot([x for x in range(T)],stoch_density,label="stochastic")
 #plt.plot([x for x in range(T)],mfa_density,label="mean-field")
